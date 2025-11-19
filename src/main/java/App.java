@@ -10,7 +10,22 @@ import fr.einfolearning.tp2.metiers.exceptions.EmacsKillRingOverflowException;
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IllegalAccessException, EmacsKillRingOverflowException {
         // A completer
+        TextEditor textEditor = new TextEditor("je suis un editeur de texte");
+
+        System.out.println(textEditor.getTextBuffer());
+
+        textEditor.setCursor(3);
+        textEditor.setMark(7);
+        textEditor.killSection();
+        textEditor.getTextBuffer().del(0,4);
+        System.out.println(textEditor.getTextBuffer());
+        System.out.println(textEditor.getBuffer() + textEditor.getCursor() + textEditor.getMark());
+
+
+
     }
+
+
 }
