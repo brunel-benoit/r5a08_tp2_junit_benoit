@@ -19,10 +19,14 @@ public class App {
         textEditor.setCursor(3);
         textEditor.setMark(7);
         textEditor.killSection();
+
         textEditor.getTextBuffer().del(0,4);
         System.out.println(textEditor.getTextBuffer());
         System.out.println(textEditor.getBuffer() + textEditor.getCursor() + textEditor.getMark());
 
+        textEditor.setCursor(0);
+        textEditor.yank();
+        System.out.println(textEditor.getTextBuffer());
 
 
     }
